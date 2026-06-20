@@ -106,19 +106,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 6. Testimonials Slider Micro-Interaction
+  // 6. Testimonials Slider Micro-Interaction (Native Swipe + Click Scroll)
   const dots = document.querySelectorAll(".slider-dots .dot");
+  const testimonialsSlider = document.querySelector(".testimonials-slider");
   const testimonialCards = document.querySelectorAll(".testimonial-card");
 
-  if (dots.length > 0) {
+  if (dots.length > 0 && testimonialsSlider) {
+    // Click on dots to scroll to the corresponding card
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
-        // Toggle active dot
         dots.forEach(d => d.classList.remove("active"));
         dot.classList.add("active");
 
-        // Swap visible cards for smaller screens or simple visual pagination
-        // On widescreen we show all 3, on tablet we hide some. We adjust opacity for focus.
+        // Scroll testimonials slider to correct item
+        const cardWidth = testimonialCards[0].offsetWidth;
+        const gap = 20; // grid/flex gap in CSS
+        testimonialsSlider.scrollTo({
+          left: index * (cardWidth + gap),
+          behavior: "smooth"
+        });
+
+        // Opacity styling for focus
         testimonialCards.forEach((card, idx) => {
           if (idx === index) {
             card.style.opacity = "1";
@@ -129,6 +137,35 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       });
+    });
+
+    // Update active dot on scroll (native swipe tracking)
+    let isScrolling;
+    testimonialsSlider.addEventListener("scroll", () => {
+      window.clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        const cardWidth = testimonialCards[0].offsetWidth;
+        const gap = 20;
+        const scrollPosition = testimonialsSlider.scrollLeft;
+        const activeIndex = Math.round(scrollPosition / (cardWidth + gap));
+        
+        if (activeIndex >= 0 && activeIndex < dots.length) {
+          dots.forEach(d => d.classList.remove("active"));
+          if (dots[activeIndex]) {
+            dots[activeIndex].classList.add("active");
+          }
+          
+          testimonialCards.forEach((card, idx) => {
+            if (idx === activeIndex) {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1)";
+            } else {
+              card.style.opacity = "0.7";
+              card.style.transform = "scale(0.98)";
+            }
+          });
+        }
+      }, 80);
     });
   }
 
