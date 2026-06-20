@@ -6,6 +6,7 @@
 
 /* 1. CSS Variables & Tokens */
 :root {
+  color-scheme: light;
   /* Colors */
   --primary-forest: hsl(125, 35%, 22%);      /* Deep Green */
   --primary-forest-rgb: 36, 76, 42;
