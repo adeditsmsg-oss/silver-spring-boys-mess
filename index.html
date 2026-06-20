@@ -62,50 +62,57 @@
   </header>
 
   <!-- 2. Large Hero Section -->
-  <section id="home" class="hero-section" style="background-image: linear-gradient(rgba(45, 90, 39, 0.35), rgba(45, 90, 39, 0.45)), url('images/building_wide.jpg');">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fa-solid fa-bell"></i>
-        <span>আগস্ট মাসের বুকিং চলছে - Limited Offer</span>
-      </div>
-      <h1 class="hero-title">Find Premium Boys Mess Easily</h1>
-      <p class="hero-subtitle">মেদিনীপুরের সেরা ছাত্রাবাস (Tantigeria, near Bidla Traffic Point). Premium shared or single rooms, all-inclusive packages starting at just ₹2,799/month (Bed + Food + Electric) with RO water and daily maid cleaning.</p>
-      <div class="hero-buttons">
-        <a href="#rooms" class="btn-primary">View Packages / প্যাকেজ দেখুন</a>
-        <a href="https://wa.me/918016801695?text=Hi%20Silver%20Spring%20Boys%20Mess,%20I%20am%20interested%20in%20inquiring%20about%20room%20availability%20for%20August." target="_blank" class="btn-secondary">
-          <i class="fa-brands fa-whatsapp"></i> Chat with Caretaker
-        </a>
-      </div>
-    </div>
-    
-    <!-- 3. Floating Quick Inquiry Bar -->
-    <div class="floating-inquiry-bar">
-      <form id="quick-inquiry-form" class="inquiry-form">
-        <div class="form-group">
-          <label for="quick-room"><i class="fa-solid fa-bed"></i> Plan Preference / প্যাকেজ</label>
-          <select id="quick-room" name="room_type">
-            <option value="all_inclusive">All-Inclusive (Bed + Food + Electric)</option>
-            <option value="bed_only">Separate (Bed Only)</option>
-          </select>
+  <section id="home" class="hero-section">
+    <div class="section-container hero-container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-bell"></i>
+            <span>আগস্ট মাসের বুকিং চলছে - Limited Offer</span>
+          </div>
+          <h1 class="hero-title">Find Premium Boys Mess Easily</h1>
+          <p class="hero-subtitle">মেদিনীপুরের সেরা ছাত্রাবাস (Tantigeria, near Bidla Traffic Point). Premium shared or single rooms, all-inclusive packages starting at just ₹2,799/month (Bed + Food + Electric) with RO water and daily maid cleaning.</p>
+          <div class="hero-buttons">
+            <a href="#rooms" class="btn-primary">View Packages / প্যাকেজ দেখুন</a>
+            <a href="https://wa.me/918016801695?text=Hi%20Silver%20Spring%20Boys%20Mess,%20I%20am%20interested%20in%20inquiring%20about%20room%20availability%20for%20August." target="_blank" class="btn-secondary">
+              <i class="fa-brands fa-whatsapp"></i> Chat with Caretaker
+            </a>
+          </div>
         </div>
-        
-        <div class="form-group-divider"></div>
-        
-        <div class="form-group">
-          <label for="quick-sharing"><i class="fa-solid fa-users"></i> Occupancy / বেড সংখ্যা</label>
-          <select id="quick-sharing" name="occupancy">
-            <option value="single">Single Bed</option>
-            <option value="double">2 Bed Room</option>
-            <option value="triple">3 Bed Room</option>
-            <option value="quad">4 Bed Room</option>
-          </select>
+        <div class="hero-visual">
+          <img src="images/building.jpg" alt="Silver Spring Boys Mess Building" class="hero-img">
         </div>
-        
-        <button type="submit" class="btn-inquiry">
-          <span>Check Prices</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </form>
+      </div>
+      
+      <!-- 3. Floating Quick Inquiry Bar -->
+      <div class="floating-inquiry-bar">
+        <form id="quick-inquiry-form" class="inquiry-form">
+          <div class="form-group">
+            <label for="quick-room"><i class="fa-solid fa-bed"></i> Plan Preference / প্যাকেজ</label>
+            <select id="quick-room" name="room_type">
+              <option value="all_inclusive">All-Inclusive (Bed + Food + Electric)</option>
+              <option value="bed_only">Separate (Bed Only)</option>
+            </select>
+          </div>
+          
+          <div class="form-group-divider"></div>
+          
+          <div class="form-group">
+            <label for="quick-sharing"><i class="fa-solid fa-users"></i> Occupancy / বেড সংখ্যা</label>
+            <select id="quick-sharing" name="occupancy">
+              <option value="single">Single Bed</option>
+              <option value="double">2 Bed Room</option>
+              <option value="triple">3 Bed Room</option>
+              <option value="quad">4 Bed Room</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn-inquiry">
+            <span>Check Prices</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 
